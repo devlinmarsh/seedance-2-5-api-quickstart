@@ -1,6 +1,6 @@
-# Seedance 2.5 API — from $0.0874/s
+# Seedance 2.5 API — from $0.0874/s (480p)
 
-**ByteDance Seedance 2.5 is live on [ArgoLink](https://argolink.io/gh-seedance-2-5-api-quickstart)**, 15% below the official price. Text, images, video and audio in; a 4–30 s clip with synced sound out. One async REST endpoint, per-second billing, failed jobs never billed, and a stable API that runs up to 50 jobs at once per account.
+**ByteDance Seedance 2.5 is live on [ArgoLink](https://argolink.io/gh-seedance-2-5-api-quickstart)**: $0.0874/s at 480p, $0.196/s at 720p, $0.483/s at 1080p, 15% below the official price. Text, images, video and audio in; a 4–30 s clip with synced sound out. One async REST endpoint, per-second billing, failed jobs never billed, and a stable API that runs up to 50 jobs at once per account.
 
 [Seedance 2.5 model page →](https://argolink.io/en/models/seedance-2.5) · [Price table](#price-per-second) · [Quick start](#quick-start) · [Modes](#modes) · [FAQ](#faq)
 
