@@ -22,6 +22,7 @@ This repo has a dependency-free client for [Python](./seedance25.py) and [Node.j
 | Not supported | `seed`, `watermark: true`, `n` > 1 (400) |
 | Typical wait | 2–5 minutes for a 4–10 s clip |
 | Concurrency | ArgoLink: up to 50 Seedance 2.5 jobs at once per account, whatever it has spent (fal: 2 for a new account, up to 40 self-serve) |
+| Reliability | ArgoLink spreads jobs over several upstream accounts and admits a job only when one has capacity; a failed job is never billed |
 
 ## Price per second
 
