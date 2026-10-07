@@ -17,6 +17,7 @@ import urllib.request
 
 DEFAULT_BASE_URL = "https://argolink.io/v1"
 MODEL = "seedance-2.5"
+USER_AGENT = "seedance-2-5-api-quickstart/1.0"
 TERMINAL = ("done", "failed", "expired")
 
 
@@ -41,6 +42,7 @@ class Seedance25:
         data = json.dumps(body).encode() if body is not None else None
         request = urllib.request.Request(self.base_url + path, data=data, method=method)
         request.add_header("Authorization", f"Bearer {self.api_key}")
+        request.add_header("User-Agent", USER_AGENT)
         if data is not None:
             request.add_header("Content-Type", "application/json")
         try:
@@ -96,6 +98,7 @@ class Seedance25:
         with open(file_path, "rb") as handle:
             put = urllib.request.Request(ticket["upload_url"], data=handle.read(), method="PUT")
         put.add_header("Content-Type", content_type)
+        put.add_header("User-Agent", USER_AGENT)
         urllib.request.urlopen(put, timeout=self.timeout).close()
         return ticket["media_url"]
 

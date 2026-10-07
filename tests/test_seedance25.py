@@ -80,3 +80,17 @@ def test_missing_key_is_reported(monkeypatch):
     monkeypatch.delenv("SEEDANCE_API_KEY", raising=False)
     with pytest.raises(seedance25.SeedanceError):
         seedance25.Seedance25()
+
+
+def test_every_request_sends_a_user_agent(monkeypatch, tmp_path):
+    agents = []
+    fake_api(monkeypatch, [{"status": "done", "usage": {}}], [])
+    fake = seedance25.urllib.request.urlopen
+
+    def urlopen(request, timeout=None):
+        agents.append(request.get_header("User-agent"))
+        return fake(request, timeout)
+
+    monkeypatch.setattr(seedance25.urllib.request, "urlopen", urlopen)
+    seedance25.Seedance25(api_key="test").generate("x", str(tmp_path / "out.mp4"))
+    assert agents and all(agent == seedance25.USER_AGENT for agent in agents)
