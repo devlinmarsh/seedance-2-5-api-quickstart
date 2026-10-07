@@ -2,7 +2,7 @@
 
 Generate ByteDance **Seedance 2.5** videos from code: text-to-video, first/last frame, image + video + audio references, and video editing. One async endpoint: submit, poll, download the MP4.
 
-This repo has a dependency-free client for [Python](./seedance25.py) and [Node.js](./seedance25.mjs), runnable [examples](./examples) for every mode, and offline [tests](./tests). The examples run on [ArgoLink](https://argolink.io/gh-seedance-2-5-api-quickstart), which serves Seedance 2.5 at $0.0874/s, 15% below the official price. Any endpoint that speaks the same `/v1/videos` protocol works: set `SEEDANCE_BASE_URL`.
+This repo has a dependency-free client for [Python](./seedance25.py) and [Node.js](./seedance25.mjs), runnable [examples](./examples) for every mode, and offline [tests](./tests). The examples run on [ArgoLink](https://argolink.io/gh-seedance-2-5-api-quickstart), which serves Seedance 2.5 at $0.0874/s, 15% below the official price, with a stable API that handles up to 50 parallel jobs per account. Any endpoint that speaks the same `/v1/videos` protocol works: set `SEEDANCE_BASE_URL`.
 
 <sub>Facts checked 2026-10-07 against the provider pages linked below.</sub>
 
@@ -22,7 +22,7 @@ This repo has a dependency-free client for [Python](./seedance25.py) and [Node.j
 | Not supported | `seed`, `watermark: true`, `n` > 1 (400) |
 | Typical wait | 2–5 minutes for a 4–10 s clip |
 | Concurrency | ArgoLink: up to 50 Seedance 2.5 jobs at once per account, whatever it has spent (fal: 2 for a new account, up to 40 self-serve) |
-| Reliability | ArgoLink spreads jobs over several upstream accounts and admits a job only when one has capacity; a failed job is never billed |
+| Reliability | ArgoLink's Seedance 2.5 API is stable under load: jobs are spread over several upstream accounts and admitted only when one has capacity, and a failed job is never billed |
 
 ## Price per second
 
