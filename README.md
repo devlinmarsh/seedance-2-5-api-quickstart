@@ -1,8 +1,10 @@
-# Seedance 2.5 API Quickstart (Python, Node.js, cURL)
+# Seedance 2.5 API — from $0.0874/s
 
-Generate ByteDance **Seedance 2.5** videos from code: text-to-video, first/last frame, image + video + audio references, and video editing. One async endpoint: submit, poll, download the MP4.
+**ByteDance Seedance 2.5 is live on [ArgoLink](https://argolink.io/gh-seedance-2-5-api-quickstart)**, 15% below the official price. Text, images, video and audio in; a 4–30 s clip with synced sound out. One async REST endpoint, per-second billing, failed jobs never billed, and a stable API that runs up to 50 jobs at once per account.
 
-This repo has a dependency-free client for [Python](./seedance25.py) and [Node.js](./seedance25.mjs), runnable [examples](./examples) for every mode, and offline [tests](./tests). The examples run on [ArgoLink](https://argolink.io/gh-seedance-2-5-api-quickstart), which serves Seedance 2.5 at $0.0874/s, 15% below the official price, with a stable API that handles up to 50 parallel jobs per account. Any endpoint that speaks the same `/v1/videos` protocol works: set `SEEDANCE_BASE_URL`.
+[Seedance 2.5 model page →](https://argolink.io/en/models/seedance-2.5) · [Price table](#price-per-second) · [Quick start](#quick-start) · [Modes](#modes) · [FAQ](#faq)
+
+This repo has a dependency-free client for [Python](./seedance25.py) and [Node.js](./seedance25.mjs), runnable [examples](./examples) for every mode, and offline [tests](./tests). Any endpoint that speaks the same `/v1/videos` protocol works: set `SEEDANCE_BASE_URL`.
 
 <sub>Facts checked 2026-10-07 against the provider pages linked below.</sub>
 
