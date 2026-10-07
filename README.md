@@ -21,6 +21,7 @@ This repo has a dependency-free client for [Python](./seedance25.py) and [Node.j
 | Output | one 24 fps H.264 MP4 per request, up to 1080p |
 | Not supported | `seed`, `watermark: true`, `n` > 1 (400) |
 | Typical wait | 2–5 minutes for a 4–10 s clip |
+| Concurrency | ArgoLink: up to 50 Seedance 2.5 jobs at once per account, whatever it has spent (fal: 2 for a new account, up to 40 self-serve) |
 
 ## Price per second
 
@@ -168,6 +169,9 @@ Differences: `duration` is a whole number of seconds (`"auto"` is rejected), and
 
 **How long does a Seedance 2.5 video take?**
 About 2–5 minutes for a 4–10 second clip. Poll the status; a busy queue can hold a job longer.
+
+**How many videos can I generate in parallel?**
+On ArgoLink an account runs up to 50 Seedance 2.5 jobs at the same time, and the limit does not depend on how much the account has spent. A new fal account starts at 2 concurrent requests and rises with recent spend to 40 on self-serve plans. Over the limit, ArgoLink answers `429 rate_limit_error`; when there is no capacity it answers `503` with a `Retry-After` header. Both are safe to retry, and a job that fails is not billed.
 
 **Can I get 4K or several videos per request?**
 No. Seedance 2.5 renders up to 1080p and one video per request (`n` must be 1 or omitted).
